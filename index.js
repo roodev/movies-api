@@ -4,7 +4,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const PORT =process.env.PORT || 3000
-const database = require('./src/config/database')
+const database = require('./SRC/config/database')
 
 /**Configurando o body parser */
 app.use(bodyParser.urlencoded({extended: true}))
