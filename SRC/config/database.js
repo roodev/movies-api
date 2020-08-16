@@ -11,6 +11,5 @@ db = mongoose.connect(URI_DATABASE, {useNewUrlParser: true, useUnifiedTopology: 
     .then(() => console.log('Banco de dados conectado com sucesso!'))
     .catch(error => console.log (`Problema ao conectar no banco de dados = ERRO: ${error}`))
 
-module.exports = { db }
-
 /** Exportando conexão para outros */
+module.exports = { db }
