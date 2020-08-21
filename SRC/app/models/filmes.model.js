@@ -2,13 +2,13 @@ const{Schema, model} = require('mongoose')
 
 const FilmeSchema = new Schema({
     nome: {
-        type: String
+        type: String,
         required: true,
         trim: true
     },
 
     genero: {
-        type: String
+        type: String,
         required: false,
         trim: true
     },
