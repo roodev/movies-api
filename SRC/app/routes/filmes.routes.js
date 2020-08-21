@@ -4,4 +4,6 @@ const Filme = require('./../controllers/filmes.controller')
 
 route.post('/criar', Filme.criarFilme )
 
+route.get('/visualizarTodos', Filme.visualizarFilmes)
+
 module.exports = route
