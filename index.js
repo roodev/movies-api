@@ -26,6 +26,7 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     res.send({ message: `API ouvindo na porta ${PORT}`})
 })
+
 /**Configurando o endpoint * que é retornado quando uma url requisitada não existe */
 app.use('*', (req, res) => {
     res.send({message: 'API não encontrada!' })
