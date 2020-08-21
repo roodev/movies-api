@@ -5,6 +5,11 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const PORT =process.env.PORT || 3000
 const database = require('./SRC/config/database')
+const filmesController = require('./SRC/app/controllers/filmes.controller')
+
+/**Importando rotas da aplicação*/
+
+const FilmesRoutes = require('./SRC/app/routes/filmes.routes')
 
 /**Configurando o body parser */
 app.use(bodyParser.urlencoded({extended: true}))
@@ -26,6 +31,8 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     res.send({ message: `API ouvindo na porta ${PORT}`})
 })
+
+app.use('/filmes', FilmesRoutes)
 
 /**Configurando o endpoint * que é retornado quando uma url requisitada não existe */
 app.use('*', (req, res) => {
