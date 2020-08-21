@@ -6,4 +6,6 @@ route.post('/criar', Filme.criarFilme )
 
 route.get('/visualizarTodos', Filme.visualizarFilmes)
 
+route.get('/visualizarUm/:nome', Filme.visualizarUmFilme)
+
 module.exports = route
