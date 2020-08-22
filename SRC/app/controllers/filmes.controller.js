@@ -1,5 +1,15 @@
 const filmeschema = require('./../models/filmes.model')
 
+function definirCamposDeBusca(campos){
+    if (campos == 'nome18'){
+        return {nome: 1, maior18: 1}
+    } else if (campos == 'nome') {
+        return {nome: 1}
+    } else {
+       return null
+    }
+}
+
 class Filme {
 
     criarFilme(req, res){
@@ -14,8 +24,10 @@ class Filme {
         })
     }
 
-    visualizarFilmes(req, res){
-        filmeschema.find({}, (err, data) => {
+    visualizarFilmes(req, res) {
+        const campos = req.query.campos
+
+        filmeschema.find({}, definirCamposDeBusca(campos), (err, data) => {
             if (err) {
                 res.status(500).send({message:"Houve um erro ao processar a sua requisição", error: err})
             } else {
