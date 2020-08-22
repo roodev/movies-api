@@ -8,4 +8,6 @@ route.get('/visualizarTodos', Filme.visualizarFilmes)
 
 route.get('/visualizarUm/:nome', Filme.visualizarUmFilme)
 
+route.put('/atualizarUm/:nome', Filme.atualizarUmFilme)
+
 module.exports = route
